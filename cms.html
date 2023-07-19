@@ -1,0 +1,486 @@
+<!-- 
+    coded by Nitish kr jha ;
+    github: nitish2002jha ;
+   
+    https://www.linkedin.com/in/nitish-jha-70952924a;
+    email: nkjha8391@gmail.com ;
+    :)
+ -->
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <title>Content management system</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="engine/libs/bootstrap/css/bootstrap.rtl.css">
+    <link rel="stylesheet" href="engine/styles/main.css">
+</head>
+
+<body dir="rtl">
+    <!----------------- Navbar ----------------->
+    <nav class="navbar navbar-expand-md fixed-top border-bottom border-secondary" id="main-navbar-colors">
+        <div class="container-fluid">
+            <p class="mb-0 navbar-brand d-flex justify-content-start">
+                <span>Management panel</span>
+                <li class="fa fa-angle-double-left cursor-pointer d-none d-md-block" id="navbar-open-sidebar" data-bs-toggle="offcanvas" data-bs-target="#main-sidebar"></li>
+            </p>
+            <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#main-sidebar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="menu">
+                <!-- right -->
+                <nav class="navbar-nav rigth-navbar">
+                    <a href="#" class="nav-link">
+                        <li class="fa fa-dashboard text-success"></li>
+                        Counter
+                    </a>
+                    <a href="#" class="nav-link">
+                        <li class="fa fa-users text-primary"></li>
+                        Users
+                    </a>
+                    <a href="#" class="nav-link">
+                        <li class="fa fa-cog text-danger"></li>
+                        Settings
+                    </a>
+                </nav>
+                <!-- /right -->
+            </div>
+
+            <!-- left -->
+            <nav class="navbar-nav d-none d-md-flex align-items-center cursor-pointer left-navbar" dir="ltr">
+                <li class="nav-item me-3 dropdown">
+                    <div class="account d-flex flex-column align-items-center" data-bs-toggle="dropdown">
+                        <img src="content/images/user.png" width="40" alt="">
+                        <span class="font-eng">Nitish jha</span>
+                    </div>
+                    <ul class="dropdown-menu dropdown-menu-start dropdown-menu-dark">
+                        <li><span class="dropdown-header text-center bg-secondary text-light">Account</span></li>
+                        <li><a href="#" class="dropdown-item">Profile</a></li>
+                        <li><a href="#" class="dropdown-item text-center text-danger">EXIT</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item ms-4 dropdown">
+                    <li class="far fa-comment fs-5 nav-link" data-bs-toggle="dropdown"></li>
+                    <span class="badge bg-primary rounded-pill mb-4 notif-count">12</span>
+                    <ul class="dropdown-menu dropdown-menu-start dropdown-menu-dark mb-5 me-3">
+                        <li><span class="dropdown-header text-center bg-secondary text-light">You have 12 new message</span></li>
+                        <li><a href="#" class="dropdown-item">View</a></li>
+                        <li><a href="#" class="dropdown-item text-danger text-center">Remove all</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <li class="fa fa-list-ul fs-5 nav-link" data-bs-toggle="dropdown"></li>
+                    <span class="badge bg-warning rounded-pill mb-4 notif-count">5</span>
+                    <ul class="dropdown-menu dropdown-menu-start dropdown-menu-dark mb-5 me-4">
+                        <li><span class="dropdown-header text-center bg-secondary text-light">you have 5 new orders</span></li>
+                        <li><a href="#" class="dropdown-item">view</a></li>
+                        <li>
+                            <button href="#" class="dropdown-item text-danger text-center">Remove All</button>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <li class="far fa-bell fs-5 nav-link" data-bs-toggle="dropdown"></li>
+                    <span class="badge bg-danger rounded-pill mb-4 notif-count">3</span>
+                    <ul class="dropdown-menu dropdown-menu-start dropdown-menu-dark mb-5 me-5">
+                        <li><span class="dropdown-header text-center bg-secondary text-light">you have 3 new Annoucement </span></li>
+                        <li><a href="#" class="dropdown-item">New users are added</a></li>
+                        <li><a href="#" class="dropdown-item">user #12345 has been removed</a></li>
+                        <li><a href="#" class="dropdown-item text-danger text-center">Remove All</a></li>
+                    </ul>
+                </li>
+            </nav>
+            <!-- /left -->
+        </div>
+    </nav>
+
+    <!----------------- Content ----------------->
+    <div class="w-100">
+        <!-- sidebar -->
+        <div class="offcanvas offcanvas-start bg-dark show border-0" id="main-sidebar" data-bs-scroll="true" data-bs-backdrop="false">
+            <div class="sidebar-content p-4 pt-2 text-light">
+                <!-- header -->
+                <header class="d-flex justify-content-between align-items-center">
+                    <span class="fs-4">Menu</span>
+                    <li class="fa fa-angle-double-left cursor-pointer" style="transform: rotate(180deg);" data-bs-dismiss="offcanvas"></li>
+                </header>
+                <!-- sidebar content -->
+                <section class="sidebar-content pt-3">
+                    <!-- mobile menu -->
+                    <div class="w-100 d-flex align-items-center flex-column d-md-none">
+                        <div class="d-flex flex-column" data-bs-toggle="tooltip" title="view profile" id="sidebar-profile">
+                            <img src="content/images/user.png" width="50" alt="">
+                            <span class="font-eng mt-1">Nitish jha</span>
+                        </div>
+                        <div class="mt-3 d-flex justify-content-between w-100">
+                            <div class="d-flex flex-column align-items-center">
+                                <div>
+                                    <span class="badge bg-primary rounded-pill notif-count sidebar-notif-count">12</span>
+                                    <li class="far fa-comment"></li>
+                                </div>
+                                <span class="sidebar-notif-title">
+                                    posts
+                                </span>
+                            </div>
+
+                            <div class="d-flex flex-column align-items-center">
+                                <div>
+                                    <span class="badge bg-warning rounded-pill notif-count sidebar-notif-count">5</span>
+                                    <li class="fa fa-list-ul"></li>
+                                </div>
+                                <span class="sidebar-notif-title">
+                                    products
+                                </span>
+                            </div>
+
+                            <div class="d-flex flex-column align-items-center">
+                                <div>
+                                    <span class="badge bg-danger rounded-pill notif-count sidebar-notif-count">3</span>
+                                    <li class="far fa-bell"></li>
+                                </div>
+                                <span class="sidebar-notif-title">
+                                    Bulletin
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- main menu -->
+                    <div class="menu-items mt-4 mt-md-1">
+                        <div class="item d-flex align-items-center justify-content-between cursor-pointer collapsed" data-bs-toggle="collapse" data-bs-target="#menu-collapse-1">
+                            <div>
+                                <li class="fa fa-pen"></li>
+                                <span class="ms-2">posts</span>
+                            </div>
+                            <li class="fa fa-chevron-left menu-arrow-icon"></li>
+                        </div>
+                        <div class="collapse bg-secondary rounded mt-2" id="menu-collapse-1">
+                            <ul class="nav d-flex flex-column">
+                                <li class="nav-link text-light cursor-pointer">View posts</li>
+                                <li class="nav-link text-light cursor-pointer">Archive</li>
+                                <li class="nav-link text-light cursor-pointer">Add</li>
+                            </ul>
+                        </div>
+
+                        <div class="item mt-4 d-flex align-items-center justify-content-between cursor-pointer collapsed" data-bs-toggle="collapse" data-bs-target="#menu-collapse-2">
+                            <div>
+                                <li class="fa fa-shopping-cart"></li>
+                                <span class="ms-2">Products</span>
+                            </div>
+                            <li class="fa fa-chevron-left menu-arrow-icon"></li>
+                        </div>
+                        <div class="collapse bg-secondary rounded mt-2" id="menu-collapse-2">
+                            <ul class="nav d-flex flex-column">
+                                <li class="nav-link text-light cursor-pointer">View products</li>
+                                <li class="nav-link text-light cursor-pointer">Archive</li>
+                                <li class="nav-link text-light cursor-pointer">Adding product</li>
+                            </ul>
+                        </div>
+
+                        <div class="item mt-4">
+                            <li class="fa fa-comment"></li>
+                            <span class="ms-2">Vision</span>
+                        </div>
+
+                        <div class="item mt-4">
+                            <li class="fa fa-video"></li>
+                            <span class="ms-2">Media</span>
+                        </div>
+
+                        <div class="item mt-4">
+                            <li class="fa fa-users"></li>
+                            <span class="ms-2">Users</span>
+                        </div>
+
+                        <div class="item mt-4">
+                            <li class="fa fa-cog"></li>
+                            <span class="ms-2">Settings</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="sidebar-footer p-1 w-100">
+                <div class="change-theme-toggler d-flex justify-content-center align-items-center cursor-pointer">
+                    <li class="far fa-moon theme-icon" id="theme-dark-icon"></li>
+                    <img src="content/images/sun.svg" class="theme-icon show" width="23" alt="sun_icon" id="theme-light-icon">
+                </div>
+            </div>
+        </div>
+
+        <!-- content -->
+        <div class="content-container float-end" id="main-content-colors">
+            <div class="container-fluid pt-4">
+                <!-- up cards -->
+                <div class="up-cards row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+                    <div class="col">
+                        <div class="card bg-warning text-light shadow">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>45785</span>
+                                    <li class="fa fa-chart-bar up-cards-icon"></li>
+                                </div>
+                                <p class="mb-0 mt-2">Daily visit Count</p>
+                                <div>
+                                    <canvas id="daily-view-chart" width="100%" height="50%"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card bg-primary text-light shadow">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>1053</span>
+                                    <li class="fa fa-users up-cards-icon"></li>
+                                </div>
+                                <p class="mb-0 mt-2">Numbers of new users</p>
+                                <div>
+                                    <canvas id="new-users-chart" width="100%" height="50%"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card bg-danger text-light shadow">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>3053</span>
+                                    <li class="fa fa-chart-pie up-cards-icon"></li>
+                                </div>
+                                <p class="mb-0 mt-2">Number of daily Sales</p>
+                                <div>
+                                    <canvas id="sales-count-chart" width="100%" height="50%"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card bg-success text-light shadow">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>537</span>
+                                    <li class="fa fa-chart-line up-cards-icon"></li>
+                                </div>
+                                <p class="mb-0 mt-2">Numbers of new products</p>
+                                <div>
+                                    <canvas id="new-products-chart" width="100%" height="50%"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- center card -->
+            <div class="center-card w-100">
+                <div class="card w-100 shadow mt-3" id="center-card-colors">
+                    <div class="card-body">
+                        <header class="d-flex justify-content-between align-items-center">
+                            <p class="mb-0 h5">Visit statistics</p>
+                            <div class="btn-group d-none d-md-flex">
+                                <input type="radio" class="btn-check" name="date" id="day" checked>
+                                <label for="day" class="btn btn-outline-secondary">Day</label>
+                                <input type="radio" class="btn-check" name="date" id="month">
+                                <label for="month" class="btn btn-outline-secondary">month</label>
+                                <input type="radio" class="btn-check" name="date" id="year">
+                                <label for="year" class="btn btn-outline-secondary">year</label>
+                            </div>
+                            <div class="dropdown d-block d-md-none">
+                                <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                                    روز
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li><button type="button" class="dropdown-item d-flex justify-content-between align-items-center">
+                                        <span>روز</span>
+                                        <li class="fa fa-check" style="opacity: .8;font-size: .9rem;"></li>
+                                    </button></li>
+                                    <li><button type="button" class="dropdown-item">ماه</button></li>
+                                    <li><button type="button" class="dropdown-item">سال</button></li>
+                                </ul>
+                            </div>
+                            <button type="button" class="btn btn-info text-white" data-bs-toggle="tooltip" title="Getting output">
+                                <li class="fa fa-file-export"></li>
+                            </button>
+                        </header>
+                        <div class="mt-4">
+                            <canvas id="site-view-chart" width="100%" height="25%"></canvas>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <footer class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
+                            <div class="col">
+                                <div class="d-flex flex-column align-items-center">
+                                    <span class="center-card-footer-title">Total vistors</span>
+                                    <span class="mt-2">45785 User</span>
+                                    <div class="progress w-100 mt-3" dir="ltr">
+                                        <div class="progress-bar bg-info" style="width: 45%;">
+                                            45%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="d-flex flex-column align-items-center">
+                                    <span class="center-card-footer-title">Unique Visits</span>
+                                    <span class="mt-2">38198 User</span>
+                                    <div class="progress w-100 mt-3" dir="ltr">
+                                        <div class="progress-bar bg-warning" style="width: 36%;">
+                                            36%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="d-flex flex-column align-items-center">
+                                    <span class="center-card-footer-title">Visit Pages</span>
+                                    <span class="mt-2">26541 User</span>
+                                    <div class="progress w-100 mt-3" dir="ltr">
+                                        <div class="progress-bar bg-primary" style="width: 26%;">
+                                            26%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="d-flex flex-column align-items-center">
+                                    <span class="center-card-footer-title">New Users</span>
+                                    <span class="mt-2">1053 User</span>
+                                    <div class="progress w-100 mt-3" dir="ltr">
+                                        <div class="progress-bar bg-success" style="width: 68%;">
+                                            68%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="d-flex flex-column align-items-center">
+                                    <span class="center-card-footer-title">No of sales</span>
+                                    <span class="mt-2">3053 User</span>
+                                    <div class="progress w-100 mt-3" dir="ltr">
+                                        <div class="progress-bar bg-danger" style="width: 49%;">
+                                            49%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+            <!-- down card -->
+            <div class="down-card w-100 mb-3">
+                <div class="card shadow mt-3" id="down-card-colors">
+                    <div class="card-body">
+                        <header class="d-flex align-items-center">
+                            <p class="mb-0 h5">Latest Sales Reports</p>
+                            <span class="d-flex align-items-center text-primary ms-3 cursor-pointer">
+                                <span>View All</span>
+                            <li class="fa fa-arrow-left ms-1 text-muted sidebar-notif-title"></li>
+                            </span>
+                        </header>
+                        <div class="table-responsive">
+                            <table class="table table-bordered mt-3 text-center down-card-table" id="down-table-colors">
+                                <thead>
+                                    <th spellcheck="col">Product name</th>
+                                    <th spellcheck="col">User Email</th>
+                                    <th spellcheck="col">Payment gateway </th>
+                                    <th spellcheck="col">Status</th>
+                                    <th spellcheck="col">Transaction Time</th>
+                                </thead>
+                                <tr>
+                                    <td scope="row"> Javascript 0 to 100</td>
+                                    <td scope="row" class="font-eng">nitishjha@gmail.com</td>
+                                    <td scope="row">Mellat bank</td>
+                                    <td scope="row">
+                                        <span class="btn btn-sm btn-success w-100">Paid</span>
+                                    </td>
+                                    <td scope="row">20 min ago</td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Elementary Python Training</td>
+                                    <td scope="row" class="font-eng">mohammad1378@gmail.com</td>
+                                    <td scope="row">Mellat bank</td>
+                                    <td scope="row">
+                                        <span class="btn btn-sm btn-success w-100">Paid</span>
+                                    </td>
+                                    <td scope="row">30 min ago</td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">هArtificial Intelligence with #C</td>
+                                    <td scope="row" class="font-eng">reza@gmail.com</td>
+                                    <td scope="row">Sbi bank</td>
+                                    <td scope="row">
+                                        <span class="btn btn-sm btn-primary w-100">Waiting for Payment</span>
+                                    </td>
+                                    <td scope="row">30 min  ago</td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">OOP in Java</td>
+                                    <td scope="row" class="font-eng">mohan@gmail.com</td>
+                                    <td scope="row">Pnb bank</td>
+                                    <td scope="row">
+                                        <span class="btn btn-sm btn-success w-100">پرداخت شده</span>
+                                    </td>
+                                    <td scope="row">40 min ago</td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Teaching AI with Python</td>
+                                    <td scope="row" class="font-eng">seyez@gmail.com</td>
+                                    <td scope="row">hdfc bank</td>
+                                    <td scope="row">
+                                        <span class="btn btn-sm btn-danger w-100">cancelled</span>
+                                    </td>
+                                    <td scope="row">1 min ago</td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">آjavascript 0 to 100</td>
+                                    <td scope="row" class="font-eng">paras11@gmail.com</td>
+                                    <td scope="row">kotak bank</td>
+                                    <td scope="row">
+                                        <span class="btn btn-sm btn-warning w-100">error</span>
+                                    </td>
+                                    <td scope="row">1 min ago</td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Open CV library</td>
+                                    <td scope="row" class="font-eng">sashi@gmail.com</td>
+                                    <td scope="row">Fd bank</td>
+                                    <td scope="row">
+                                        <span class="btn btn-sm btn-success w-100">paid</span>
+                                    </td>
+                                    <td scope="row">1 min ago</td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Jquery library</td>
+                                    <td scope="row" class="font-eng">rahi80@gmail.com</td>
+                                    <td scope="row">hdfc bank</td>
+                                    <td scope="row">
+                                        <span class="btn btn-sm btn-danger w-100">لcancelled</span>
+                                    </td>
+                                    <td scope="row">2 min ago</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://kit.fontawesome.com/ec17dce277.js" crossorigin="anonymous"></script>
+<script src="engine/libs/popper/popper.js"></script>
+<script src="engine/libs/bootstrap/js/bootstrap.min.js"></script>
+<script src="engine/libs/chartJs/chartjs.min.js"></script>
+<script src="engine/scripts/main.js"></script>
+<script src="engine/scripts/theme.js"></script>
+<script src="engine/scripts/chartConfig.js"></script>
+
+</html>

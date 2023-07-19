@@ -1,0 +1,178 @@
+// fonts
+@font-face {
+    font-family: "iran-sans";
+    src: url("../../content/fonts/Iranian-Sans.ttf");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+$font-iranSans: "iran-sans";
+$font-english: 'Roboto',
+sans-serif;
+// general
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: $font-iranSans;
+}
+
+:root {
+    --content-width: 100%;
+    --sidebar-toggler-rotate: 0deg;
+    --main-background-color: #f8f9fa;
+    --main-cards-background: #ffffff;
+    --main-cards-text-color: #161616;
+    --color-scheme: light;
+    color-scheme: var(--color-scheme);
+}
+
+.font-eng {
+    font-family: $font-english;
+}
+
+.notif-count {
+    font-size: .5rem;
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+.nav-link.show {
+    color: var(--main-cards-text-color) !important;
+}
+
+.left-navbar .badge {
+    position: relative;
+    right: 8px;
+}
+
+#main-sidebar {
+    width: 270px;
+    height: 100vh;
+    top: 80px;
+    position: fixed;
+    @media screen and (max-width: 768px) {
+        top: 55px;
+    }
+}
+
+.sidebar-notif-count {
+    position: relative;
+    bottom: 12px;
+    right: 3px;
+}
+
+.sidebar-notif-title {
+    font-size: .8rem;
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 12%;
+    .change-theme-toggler {
+        right: 5px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--bs-dark);
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px -5px rgba($color: #ffffff, $alpha: .2), 0px 0px 10px 0px rgba($color: #ffffff, $alpha: .2) inset;
+        position: relative;
+        color: rgba($color: #fff, $alpha: .7);
+        font-size: 1.2rem;
+        overflow: hidden;
+        transition: box-shadow.2s;
+        &:active {
+            box-shadow: 0px 0px 10px 0px rgba($color: #ffffff, $alpha: .2), 0px 0px 10px 0px rgba($color: #ffffff, $alpha: .2) inset;
+        }
+        .theme-icon {
+            position: absolute;
+            left: 150%;
+            transition: left .4s;
+            transform: translate(-50%);
+        }
+    }
+}
+
+.theme-icon.show {
+    left: 50% !important;
+}
+
+.content-container {
+    transition: width .2s;
+    margin-top: 80px;
+    width: var(--content-width);
+    // background-color: #141920;
+    @media screen and (max-width: 768px) {
+        margin-top: 40px;
+    }
+}
+
+#navbar-open-sidebar {
+    transition: transform .5s;
+    transform: rotate(var(--sidebar-toggler-rotate));
+}
+
+.menu-arrow-icon {
+    font-size: .9rem;
+    margin-bottom: 5px;
+    transform: rotate(-90deg);
+    transition: transform .5s;
+}
+
+.menu-items {
+    .item.collapsed {
+        .menu-arrow-icon {
+            transform: rotate(0deg);
+        }
+    }
+}
+
+.up-cards-icon {
+    font-size: 1.2rem;
+}
+
+.center-card {
+    padding: 0px 10px;
+    .center-card-footer-title {
+        font-size: 1rem;
+        opacity: .7;
+        font-weight: bold;
+    }
+}
+
+.down-card {
+    padding: 0px 10px;
+    .down-card-table {
+        white-space: nowrap;
+    }
+}
+
+#main-navbar-colors {
+    background-color: var(--main-background-color);
+    color: var(--main-cards-text-color);
+    transition: background-color .4s, color .4s;
+}
+
+#main-content-colors {
+    background-color: var(--main-background-color);
+    transition: background-color .4s, color .4s;
+}
+
+#center-card-colors {
+    background-color: var(--main-cards-background);
+    color: var(--main-cards-text-color);
+    transition: background-color .4s, color .4s;
+}
+
+#down-card-colors {
+    background-color: var(--main-cards-background);
+    color: var(--main-cards-text-color);
+    transition: background-color .4s, color .4s;
+}
+
+#down-table-colors {
+    color: var(--main-cards-text-color);
+    transition: color .4s;
+}
